@@ -1,0 +1,10 @@
+.row
+  .col-md-8
+    .bg-light.p-3.p-sm-5.my-4.rounded
+      h1.display-1 Welcome to InstaClone
+      p.lead あなたの素敵な日常を投稿してみましょう。
+  .col-md-4
+    h1 Login
+    = render 'form'
+    .d-grid.gap-2.col.mx-auto
+      = link_to 'ユーザー登録する', new_user_path, class:'btn btn-outline-primary rounded-pill'
