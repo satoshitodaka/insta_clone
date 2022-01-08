@@ -1,0 +1,6 @@
+nav.nav.navbar-expand-md.navbar-light.bg-light
+  = link_to 'InstaClone', root_path, class: 'navbar-brand h1 m-3'    
+  ul.navbar-nav.ml-auto.m-3.d-flex.justify-content-end
+    li.navbar-item= link_to '投稿一覧', '#', class:'nav-link'
+    li.navbar-item= link_to 'ユーザー一覧', users_path, class:'nav-link'
+    li.navbar-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
