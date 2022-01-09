@@ -1,7 +1,5 @@
 / - if flash.notice.present?
 /         = flash.notice
-- if object.errors.any?
-  #error_messages.alert.alert-danger
-    ul.mb-0
-      - object.errors.full_messages.each do |msg|
-        li = msg
+
+- flash.each do |message_type, message|
+  div class=("alert alert-#{message_type}") = message

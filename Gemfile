@@ -11,10 +11,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
-# Use CoffeeScript for .coffee assets and views
-# gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -30,12 +26,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'slim-rails'
-gem 'html2slim'
-gem 'sorcery'
-gem 'bootstrap'
-gem 'rails-i18n', '~> 5.1'
-gem 'redis-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -59,3 +49,11 @@ group :development do
   gem 'pry-byebug'
   gem 'pry-rails'
 end
+
+gem 'slim-rails'
+gem 'html2slim'
+gem 'sorcery'
+gem 'bootstrap'
+gem 'rails-i18n', '~> 5.1'
+gem 'redis-rails'
+gem 'font-awesome-sass'

@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create, :index]
-  
-  # def index
-  #   users = User.all
-  # end
 
   def show
     @user = User.find(params[:id])
@@ -23,15 +18,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  # def edit
-  # end
-
-  # def update
-  # end
-
-  # def destroy
-  # end
 
   private
 

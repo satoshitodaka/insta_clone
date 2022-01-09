@@ -1,10 +1,20 @@
-.row
-  .col-md-8
-    .bg-light.p-3.p-sm-5.my-4.rounded
-      h1.display-1 Welcome to InstaClone
-      p.lead あなたの素敵な日常を投稿してみましょう。
-  .col-md-4
-    h1 Login
-    = render 'form'
-    .d-grid.gap-2.col.mx-auto
-      = link_to 'ユーザー登録する', new_user_path, class:'btn btn-outline-primary rounded-pill'
+.login-register-form
+  .login-register-form-inner
+    
+    .card.mb-3
+      = form_with url: login_path, class: 'card-body', local: true do |f|
+        .form-group 
+          .form-floating.mb-3
+            = f.email_field :email, class: 'form-control', id:'floatingInput'
+            label for='floatingInput'
+              | メールアドレス
+        .form-group 
+          .form-floating.mb-3
+            = f.password_field :password, class: 'form-control', id:'floatingInput'
+            label for='floatingInput'
+              | パスワード
+        = f.submit 'ログイン', class: 'btn btn-primary rounded-pill'
+    .card 
+      .card-body
+        | アカウントをお持ちでないですか？
+        = link_to '登録する', new_user_path, class:'btn btn-outline-primary rounded-pill'
