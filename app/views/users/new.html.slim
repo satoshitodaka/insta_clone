@@ -1,0 +1,30 @@
+.login-register-form
+  .login-register-form-inner
+    .card.mb-3
+      = form_with model: @user, class: 'card-body', local: true do |f|
+        = render 'shared/error_messages', object: @user
+        .form-group 
+          .form-floating.mb-3
+            = f.text_field :name, class: 'form-control', id:'floatingInput'
+            label for='floatingInput'
+              | 名前
+        .form-group 
+          .form-floating.mb-3
+            = f.email_field :email, class: 'form-control', id:'floatingInput'
+            label for='floatingInput'
+              | メールアドレス
+        .form-group 
+          .form-floating.mb-3
+            = f.password_field :password, class: 'form-control', id:'floatingInput'
+            label for='floatingInput'
+              | パスワード
+        .form-group 
+          .form-floating.mb-3
+            = f.password_field :password_confirmation, class: 'form-control', id:'floatingInput'
+            label for='floatingInput'
+              | パスワード（確認）
+        = f.submit '登録登録', class: 'btn btn-primary rounded-pill'
+    .card 
+      .card-body
+        | アカウントをお持ちですか？
+        = link_to 'ログイン', login_path, class:'btn btn-outline-primary rounded-pill'
