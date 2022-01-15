@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "5.4.3",
+    "swiper": "^7.4.1",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },

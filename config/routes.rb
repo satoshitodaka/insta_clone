@@ -20,8 +20,9 @@
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
-  root to: 'users#index'
+  root to: 'posts#index'
   resources :users
+  resources :posts
 
   get '/login', to: 'user_sessions#new'
   post '/login', to: 'user_sessions#create'

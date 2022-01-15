@@ -1,0 +1,21 @@
+.card.mb-3 
+  = form_with model: @post, class: 'card-body', local: true do |f|
+    = render 'shared/error_messages', object: @post
+    .form-group
+      .form-floating.mb-3
+        = f.text_field :title, class:'form-control', id:'floatingInput'
+        label for= 'floatingInput'
+          | タイトル
+    .form-group
+      .form-floating.mb-3
+        = f.text_field :comment, class:'form-control', id:'floatingInput'
+        label for= 'floatingInput'
+          | コメント
+    .form-group
+      = f.label :image
+      = f.file_field :images, multiple: true
+      = f.hidden_field :image_cache
+      - if @post.images?
+        - (0..@post.images.length-1).each do |i|
+          = image_tag @post.images[i].url, size: '1000 ,1000'
+    = f.submit nil, class:'btn btn-primary rounded-pill'

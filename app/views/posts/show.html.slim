@@ -1,0 +1,50 @@
+.card
+  .card-body
+    h3= @post.title
+    h5= @post.comment
+
+    = link_to '編集', edit_post_path, class:'btn btn-primary rounded-pill'
+    = link_to '削除', post_path, method: :delete, class:'btn btn-danger rounded-pill'
+
+      
+    .swiper
+      .swiper-wrapper
+        - (0..@post.images.length-1).each do |i|
+          .swiper-slide
+            = image_tag @post.images[i].url, resize_to_fit: '1000, 1000'
+            / = image_tag @post.images[i]_identifier.resize(1000, 1000)
+
+      .swiper-pagination
+
+      / <!-- If we need navigation buttons -->
+      .swiper-button-prev
+      .swiper-button-next
+
+      / <!-- If we need scrollbar -->
+      .swiper-scrollbar
+
+    script src="../package/swiper-bundle.js"
+
+    javascript:
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        // direction: 'vertical',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      }); 
+    

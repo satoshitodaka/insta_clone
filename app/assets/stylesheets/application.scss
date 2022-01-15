@@ -1,6 +1,7 @@
 @import 'bootstrap';
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'swiper/swiper-bundle';
 
 body {
   position: relative;
@@ -18,4 +19,9 @@ body {
     transform: translate(-50%, -50%);
     width: 400px;
   }
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
 }
