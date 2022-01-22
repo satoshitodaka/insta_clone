@@ -5,19 +5,23 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-white
     span.navbar-toggler-icon
   / メニューの表示内容（折り畳まれる）
   #navbarTogglerDemo02.collapse.navbar-collapse
-    / 検索窓
-    form.row.row-cols-lg-auto.g-3.align-items-centermy-0
-      .col-12 
-        label.visually-hidden for='inlineFormInputGroupUsername'
-          | Search
-        .input-group
-          input.form-control#inlineFormInputGroupUsername type='text' placeholder='Search'
-      .col-12
-        button.btn.btn-outline-success type='submit'
-          | Submit
+    / / 検索窓
+    / form.row.row-cols-lg-auto.g-3.align-items-centermy-0
+    /   .col-12 
+    /     label.visually-hidden for='inlineFormInputGroupUsername'
+    /       | Search
+    /     .input-group
+    /       input.form-control#inlineFormInputGroupUsername type='text' placeholder='Search'
+    /   .col-12
+    /     button.btn.btn-outline-success type='submit'
+    /       | Seach
+    form.form-inline.my-2.my-lg-0.mr-auto
+      input.form-control.mr-sm-2 placeholder="Search" type="search" /
+      button.btn.btn-outline-success.my-2.my-sm-0 type="submit"
+        | Search
     / リンク
     ul.navbar-nav.mt-2.mt-lg-0
       li.nav-item 
-        = link_to 'ポスト一覧', '#', class:'nav-link'
+        = link_to 'ポスト一覧', posts_path, class:'nav-link'
       li.nav-item 
         = link_to 'ログイン', login_path, class: 'nav-link'

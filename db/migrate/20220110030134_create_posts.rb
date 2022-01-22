@@ -1,9 +1,8 @@
 class CreatePosts < ActiveRecord::Migration[5.2]
   def change
     create_table :posts do |t|
-      t.string :title, null: false
-      t.text :comment, null: false
-      t.json :images, null: false
+      t.text :body, null: false
+      t.string :images, null: false
       t.references :user, foreign_key: true
 
       t.timestamps

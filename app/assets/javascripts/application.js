@@ -1,8 +1,6 @@
 //= require jquery
-//= require popper
-//= require swiper/swiper-bundle.js
-//= require swiper.js
-
-// いらないかも
 //= require rails-ujs
-
+//= require bootstrap-material-design/dist/js/bootstrap-material-design.js
+//= require popper
+//= require swiper/js/swiper.js
+//= require swiper.js

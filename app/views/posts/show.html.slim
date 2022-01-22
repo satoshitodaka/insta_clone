@@ -1,50 +1,48 @@
-.card
-  .card-body
-    h3= @post.title
-    h5= @post.comment
-
-    = link_to '編集', edit_post_path, class:'btn btn-primary rounded-pill'
-    = link_to '削除', post_path, method: :delete, class:'btn btn-danger rounded-pill'
-
-      
-    .swiper
+.post-detail.card
+  .image-box 
+    .swiper-container 
       .swiper-wrapper
-        - (0..@post.images.length-1).each do |i|
+        - @post.images.each do |image|
           .swiper-slide
-            = image_tag @post.images[i].url, resize_to_fit: '1000, 1000'
-            / = image_tag @post.images[i]_identifier.resize(1000, 1000)
-
+            = image_tag image.url
       .swiper-pagination
-
-      / <!-- If we need navigation buttons -->
       .swiper-button-prev
       .swiper-button-next
-
-      / <!-- If we need scrollbar -->
-      .swiper-scrollbar
-
-    script src="../package/swiper-bundle.js"
-
-    javascript:
-      const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        // direction: 'vertical',
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-          el: '.swiper-pagination',
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-          el: '.swiper-scrollbar',
-        },
-      }); 
-    
+  .image-info-box
+    .profile-box.p-3
+      .d-flex.align-items-center
+        = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle mr-1'
+        = @post.user.name
+        - if current_user&.own?(@post)
+          .ml-auto 
+            = link_to post_path(@post), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' } do 
+              = icon 'far', 'trash-alt', class: 'fa-lg'
+            = link_to edit_post_path(@post) do 
+              = icon 'far', 'edit', class: 'fa-lg'
+    hr.m-0
+    .post-body.p-3
+      / 投稿の本文
+      .row.no-gutters
+        .col-2 
+          = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle'
+        .col-10
+          = simple_format(@post.body)
+      hr
+      / コメント一覧
+      .row.no-gutters 
+        .col-2 
+          = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle'
+        .col-10
+          | ダミーテキスト
+      hr
+      .row.no-gutters
+        .col-2 
+          = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle mr-1'
+        .col-10
+          | ホゲホゲ
+    hr.m-0
+      .post-comment.p-3 
+        form.form-inline.mb-0
+          input type='text' class='form-control input-comment-body' placeholder='コメント'
+          button type='submit' class='btn btn-primary btn-raised'
+            | 投稿

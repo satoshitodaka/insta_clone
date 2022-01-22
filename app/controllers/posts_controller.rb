@@ -1,26 +1,20 @@
 class PostsController < ApplicationController
+  before_action :require_login, only: %i[new create edit update destroy]
   def index
-    @posts = Post.all
-  end
-
-  def show
-    @post = Post.find(params[:id])
+    @posts = Post.all.includes(:user).order(created_at: :desc)
   end
 
   def new
-    user = current_user
-    @post = user.posts.new
+    @post = Post.new
   end
 
   def create
-    user = User.find(current_user.id)
-    @post = user.posts.build(post_params)
-
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to posts_path, success: '投稿しました'
     else
-      render :new
       flash.now[:danger] = '投稿に失敗しました。'
+      render :new
     end
   end
 
@@ -30,25 +24,27 @@ class PostsController < ApplicationController
 
   def update
     @post = current_user.posts.find(params[:id])
-
     if @post.update(post_params)
       redirect_to posts_path, success: '投稿を更新しました。'
     else
+      flash.now[:danger] = '投稿の更新に失敗しました。'
       render :edit
-      flash.now[:danger] = '更新に失敗しました。'
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def destroy
-    post = current_user.posts.find(params[:id])
-    post.destroy!
-    redirect_to posts_path, success: '削除しました。'
+    @post = current_user.posts.find(params[:id])
+    @post.destroy!
+    redirect_to posts_path, success: '投稿を削除しました。'
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:title, :comment, {images: []})
+      params.require(:post).permit(:body, images: [])
     end
-
 end

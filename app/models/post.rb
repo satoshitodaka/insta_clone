@@ -3,9 +3,8 @@
 # Table name: posts
 #
 #  id         :bigint           not null, primary key
-#  comment    :text(65535)      not null
-#  images     :json             not null
-#  title      :string(255)      not null
+#  body       :text(65535)      not null
+#  images     :string(255)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint
@@ -20,10 +19,10 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
-  validates :title, presence: true
-  validates :comment, presence: true
-  validates :images, presence: true
 
   mount_uploaders :images, ImagesUploader
-  # serialize :images, JSON
+  serialize :images, JSON
+
+  validates :images, presence: true
+  validates :body, presence: true, length: {maximum: 1000 }
 end
