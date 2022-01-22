@@ -1,13 +1,11 @@
 .post-detail.card
   .image-box 
-    .swiper-container 
+    .swiper
       .swiper-wrapper
         - @post.images.each do |image|
           .swiper-slide
             = image_tag image.url
       .swiper-pagination
-      .swiper-button-prev
-      .swiper-button-next
   .image-info-box
     .profile-box.p-3
       .d-flex.align-items-center
@@ -41,8 +39,8 @@
         .col-10
           | ホゲホゲ
     hr.m-0
-      .post-comment.p-3 
-        form.form-inline.mb-0
-          input type='text' class='form-control input-comment-body' placeholder='コメント'
-          button type='submit' class='btn btn-primary btn-raised'
-            | 投稿
+    .post-comment.p-3 
+      form.form-inline.mb-0
+        input type='text' class='form-control input-comment-body' placeholder='コメント'
+        button type='submit' class='btn btn-primary btn-raised'
+          | 投稿
