@@ -1,6 +1,18 @@
 ---
 ja:
   activerecord:
+    models:
+      user: 'ユーザー'
+      post: '投稿'
+    attributes:
+      user:
+        name: '名前'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+      post:
+        images: '画像'
+        body: '本文'
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

@@ -13,8 +13,8 @@
             = f.password_field :password, class: 'form-control', id:'floatingInput'
             label for='floatingInput'
               | パスワード
-        = f.submit 'ログイン', class: 'btn btn-primary rounded-pill'
+        = f.submit 'ログイン', class: 'btn btn-primary btn-raised'
     .card 
       .card-body
         | アカウントをお持ちでないですか？
-        = link_to '登録する', new_user_path, class:'btn btn-outline-primary rounded-pill'
+        = link_to '登録する', new_user_path, class:'btn btn-outline-primary btn-raised'
