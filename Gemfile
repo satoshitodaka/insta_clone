@@ -26,10 +26,21 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'slim-rails'
+gem 'html2slim'
+gem 'sorcery'
+# gem 'bootstrap'
+gem 'rails-i18n', '~> 5.1'
+gem 'redis-rails'
+gem 'font-awesome-sass'
+gem 'jquery-rails'
+gem 'popper_js'
+gem 'carrierwave', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker'
 end
 
 group :development do
@@ -49,13 +60,3 @@ group :development do
   gem 'pry-byebug'
   gem 'pry-rails'
 end
-
-gem 'slim-rails'
-gem 'html2slim'
-gem 'sorcery'
-gem 'bootstrap'
-gem 'rails-i18n', '~> 5.1'
-gem 'redis-rails'
-gem 'font-awesome-sass'
-gem 'jquery-rails'
-gem 'popper_js'
