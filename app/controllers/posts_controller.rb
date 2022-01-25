@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :require_login, only: %i[new create edit update destroy]
   def index
-    @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @posts = Post.all.includes(:user).page(params[:page]).order(created_at: :desc)
   end
 
   def new
