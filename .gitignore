@@ -68,6 +68,7 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+dump.rdb
 
 /public/packs
 /public/packs-test
