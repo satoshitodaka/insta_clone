@@ -4,6 +4,7 @@ ja:
     models:
       user: 'ユーザー'
       post: '投稿'
+      comment: 'コメント'
     attributes:
       user:
         name: '名前'
@@ -13,6 +14,10 @@ ja:
       post:
         images: '画像'
         body: '本文'
+      comment:
+        body: '本文'
+        user_id: 'ユーザー'
+        post_id: '投稿'
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
