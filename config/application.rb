@@ -21,10 +21,6 @@ module InstaClone
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-    config.time_zone = 'Asia/Tokyo'
-    config.active_record.default_timezone = :local
-    config.i18n.default_locale = :ja
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     # config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.yml').to_s]
     
     # Settings in config/environments/* take precedence over those specified here.
@@ -34,5 +30,17 @@ module InstaClone
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.skip_routes true
+      g.assets false
+      g.helper false
+    end
+
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
   end
 end
