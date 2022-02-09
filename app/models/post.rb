@@ -19,11 +19,14 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :comments, dependent: :destroy
 
   mount_uploaders :images, ImagesUploader
   serialize :images, JSON
 
   validates :images, presence: true
   validates :body, presence: true, length: { maximum: 1000 }
+
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_users, through: :likes, source: :user
 end
