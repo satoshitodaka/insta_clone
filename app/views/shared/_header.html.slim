@@ -6,9 +6,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-white
   / メニューの表示内容（折り畳まれる）
   #navbarTogglerDemo02.collapse.navbar-collapse
     / 検索窓
-    form.form-inline.my-2.my-lg-0.mr-auto
-      input.form-control.mr-sm-2 placeholder="Search" type="search" /
-      button.btn.btn-outline-success.my-2.my-sm-0 type="submit" Search
+    = render 'posts/search_form', search_form: @search_form
     / リンク   
     ul.navbar-nav.mt-2.mt-lg-0 
       li.nav-item
