@@ -5,8 +5,8 @@
 #  id               :bigint           not null, primary key
 #  crypted_password :string(255)
 #  email            :string(255)      not null
-#  name             :string(255)      not null
 #  salt             :string(255)
+#  username         :string(255)      not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
@@ -17,7 +17,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
-  validates :name, presence: true
+  validates :username, presence: true
   validates :email, presence: true, uniqueness: true
 
   validates :password, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
