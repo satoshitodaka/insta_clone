@@ -4,7 +4,7 @@ div id="comment-#{comment.id}"
       = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle'
     .col-9 
       span.font-weight-bold.pr-1
-        = comment.user.name
+        = comment.user.username
       = comment.body
     .col-1
       - if current_user&.own?(comment)

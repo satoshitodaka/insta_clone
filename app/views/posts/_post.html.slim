@@ -3,7 +3,7 @@
     .d-flex.align-items-center
       = link_to user_path(post.user)
         = image_tag 'profile-placeholder.jpg', size:'40x40', class:'rounded-circle mr-1'
-        = post.user.name 
+        = post.user.username 
       - if current_user&.own?(post)
         .ml-auto 
           = link_to post_path(post), class: 'mr-3', method: :delete, data: { confirm:'本当に削除しますか？' } do

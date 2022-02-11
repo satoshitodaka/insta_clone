@@ -11,7 +11,7 @@
       - if logged_in?
         .profile-box.mb-3 
           = image_tag 'profile-placeholder.jpg', size: '50x50', class: 'rounded-circle mr-1' 
-          = current_user.name 
+          = current_user.username 
       .users-box
         .card 
           .card-header
