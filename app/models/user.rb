@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id               :bigint           not null, primary key
+#  avatar           :string(255)
 #  crypted_password :string(255)
 #  email            :string(255)      not null
 #  salt             :string(255)
@@ -37,6 +38,9 @@ class User < ApplicationRecord
 
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+
+  mount_uploader :abatar, AvatarUploader
+  serialize :abatar, JSON
 
   scope :recent, ->(count) { order(created_at: :desc).limit(count) }
 
