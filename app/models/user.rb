@@ -18,6 +18,8 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  mount_uploader :avatar, AvatarUploader
+
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true
 
@@ -38,9 +40,6 @@ class User < ApplicationRecord
 
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-
-  mount_uploader :abatar, AvatarUploader
-  serialize :abatar, JSON
 
   scope :recent, ->(count) { order(created_at: :desc).limit(count) }
 
