@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   get '/login', to: 'user_sessions#new'
   post '/login', to: 'user_sessions#create'
   delete '/logout', to: 'user_sessions#destroy'
-  get '/mypage/account/edit', to: 'users#edit'
 
   resources :users, only: %i[index new create show]
   resources :posts, shallow: true do
@@ -36,4 +35,9 @@ Rails.application.routes.draw do
   end
   resources :likes, only: %i[create destroy]
   resources :relationships, only: %i[create destroy]
+
+  namespace :mypage do
+    resource :account, only: %i[edit update]
+  end
+
 end
