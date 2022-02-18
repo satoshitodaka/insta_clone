@@ -1,0 +1,14 @@
+= form_with model: @user, url: mypage_account_path, local: true do |f|
+  .form-group 
+    = f.label :username
+    = f.text_field :username, class: 'form-control'
+  .form-group 
+    = f.label :avatar
+    = f.file_field :avatar, class: 'form-control'
+  .form-group 
+    = f.label :password
+    = f.password_field :password
+  .form-group 
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  = f.submit nil, class: 'btn btn-raised'
