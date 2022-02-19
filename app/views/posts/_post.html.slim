@@ -1,8 +1,8 @@
 .card.mb-5.post
   .card-header 
     .d-flex.align-items-center
-      = link_to user_path(post.user)
-        = image_tag post.user.avatar.url, size:'40x40', class:'rounded-circle mr-1'
+      = link_to user_path(post.user) do
+        = image_tag post.user.avatar.url, size: '40x40', class: 'rounded-circle mr-1'
         = post.user.username 
       - if current_user&.own?(post)
         .ml-auto 
