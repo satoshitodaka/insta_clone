@@ -9,6 +9,8 @@
             = @user.username
           .text-center
             = render 'follow_area', user: @user
+            - if logged_in? && current_user == @user
+              = link_to 'プロフィール編集', edit_mypage_account_path, class: 'btn btn-primary btn-raised'
           hr
           .row 
             = render partial: 'posts/thumbnail_post', collection: @user.posts
