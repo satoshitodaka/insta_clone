@@ -19,6 +19,11 @@ ja:
         body: '本文'
         user_id: 'ユーザー'
         post_id: '投稿'
+    time:
+      formats:
+        default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+        long: "%Y/%m/%d %H:%M"
+        short: "%m/%d %H:%M"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

@@ -117,3 +117,11 @@ img {
     object-fit: cover;
   }
 }
+
+#header-activities {
+  width: 400px;
+  .dropdown-item {
+    max-width: initial;
+    font-size: 12px;
+  }
+}
