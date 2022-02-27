@@ -8,8 +8,7 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
-    / = stylesheet_link_tag "https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    / = javascript_include_tag "https://unpkg.com/swiper@7/swiper-bundle.min.js"
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
   body
     - if logged_in?
       = render 'shared/header'

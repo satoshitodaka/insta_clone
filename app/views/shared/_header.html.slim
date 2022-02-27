@@ -14,9 +14,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-white
           = icon 'far', 'image', class:'fa-lg'
       li.nav-item
         .dropdown 
-          a#dropdownMenuButton.nav-link href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true"
+          a#dropdownMenuButton.nav-link.position-relative href="#" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true"
             = icon 'far', 'heart', class: 'fa-lg'
-          #header-activities.dropdown-menu.dropdown-menu-right aria-labelledby="dropdownMenuButton"
+            = render 'shared/unread_badge'
+          #header-activities.dropdown-menu.dropdown-menu-right.m-0.p-0 aria-labelledby="dropdownMenuButton"
             = render'shared/header_activities'
 
       li.nav-item

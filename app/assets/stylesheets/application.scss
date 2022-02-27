@@ -2,6 +2,7 @@
 @import 'swiper/swiper-bundle';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'header';
 
 body {
   position: relative;
@@ -115,13 +116,5 @@ img {
     position: absolute;
     top: 0;
     object-fit: cover;
-  }
-}
-
-#header-activities {
-  width: 400px;
-  .dropdown-item {
-    max-width: initial;
-    font-size: 12px;
   }
 }

@@ -4,7 +4,8 @@
     = link_to activity.subject.user.username, user_path(activity.subject.user)
   | があなたの
   object
-    = link_to '投稿', post_path(activity.subject.post) 
+    = link_to '投稿', post_path(activity.subject.post)
   | にいいねしました
-  .ml-auto 
+  .text-right 
     = l activity.created_at, format: :short
+    
