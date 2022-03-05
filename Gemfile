@@ -38,6 +38,7 @@ gem 'popper_js'
 gem 'carrierwave', '~> 2.0'
 gem 'kaminari'
 gem 'config'
+gem 'sidekiq'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
