@@ -15,7 +15,7 @@ class Mypage::NotificationSettingsController < Mypage::BaseController
 
   private
 
-    def notification_settings_params
-      params.require(:user).permit(:notification_on_comment, :notification_on_like, :notification_on_follow)
-    end
+  def notification_settings_params
+    params.require(:user).permit(:notification_on_comment, :notification_on_like, :notification_on_follow)
+  end
 end

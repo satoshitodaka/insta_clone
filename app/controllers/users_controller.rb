@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-    
   def index
     @users = User.all.page(params[:page]).order(created_at: :desc)
   end
@@ -26,8 +24,8 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
 
 end
