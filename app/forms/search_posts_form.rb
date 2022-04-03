@@ -16,7 +16,7 @@ class SearchPostsForm
 
   private
 
-    def splited_bodies
-      body.strip.split(/[[:blank:]]+/)
-    end
+  def splited_bodies
+    body.strip.split(/[[:blank:]]+/)
+  end
 end
