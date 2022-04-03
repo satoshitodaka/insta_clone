@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  validates :username, presence: true
+  validates :username, uniqueness: true, presence: true
   validates :email, presence: true, uniqueness: true
 
   validates :password, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
