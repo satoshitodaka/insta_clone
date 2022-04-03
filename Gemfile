@@ -68,3 +68,8 @@ group :development do
   gem 'pry-rails'
   gem 'letter_opener_web'
 end
+
+group :test do
+  gem 'capybara'
+  gem 'webdrivers'
+end
